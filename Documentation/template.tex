@@ -1,0 +1,56 @@
+\documentclass{scrartcl}
+\usepackage{lipsum}
+%%\usepackage[french]{babel}
+%%\usepackage[ngerman]{babel}
+
+
+%% Choose default font for the document
+%% Warning : only ONE of the following should be enabled
+\usepackage{kpfonts}
+%%\usepackage{libertine}
+
+%% The following chose the default language for the document and
+%% use the default typography rules for the choosen language.
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+%% \setdefaultlanguage{german}
+%%\setdefaultlanguage{french}
+
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{template.bib}
+
+\usepackage{graphicx}
+
+
+\begin{document}
+\title{My beautiful report}
+\date{\today}   %% or \date{01 november 2018}
+\author{John Doe (\texttt{john.doe@bfh.ch}) \\
+  Steven Spielberg (\texttt{steven.spielberg@bfh.ch})}
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\lipsum[1-5]
+
+\section{The main problem}
+\subsection{How does it works}
+
+\lipsum[1-3]
+
+\subsection{Our solution}
+\lipsum[4-5]
+
+For that we red the article book of \cite{Jerald:2015:VBH:2792790}
+which is very interesting, much more than the article
+\cite{Diniz:2017:UGO:3100317.3100324}
+
+\section{Conclusion and future work}
+\lipsum[6-7]
+
+
+%% Print the bibibliography and add the section to th table of content
+\printbibliography[heading=bibintoc]
+
+\end{document}
