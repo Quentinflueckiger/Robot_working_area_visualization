@@ -1,0 +1,5 @@
+1. Learn how to use Latex.
+
+2. Rig the robot arm.
+
+3. Create a few animation for the robot.
