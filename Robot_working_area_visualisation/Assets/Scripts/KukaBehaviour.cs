@@ -13,6 +13,6 @@ public class KukaBehaviour : MonoBehaviour {
 	void Update () {
 
         if (Input.GetKey("space"))
-            _animator.SetTrigger("Grab_Left2");
+            _animator.SetTrigger("Grab_Left");
 	}
 }
