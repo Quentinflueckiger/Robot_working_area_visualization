@@ -1,5 +1,19 @@
-1. Learn how to use Latex.
+//Might not be done in the same order
 
-2. Rig the robot arm.
+1. Learn how to use Latex. Resolve compile problem, which is most likely some package missing.
 
-3. Create a few animation for the robot.
+2. Rig the robot arm. ? maybe not needed
+ 
+3. Create a few animation for the robot. In Blender or Unity ?
+	Create animation for every part of the robot,
+	and then use a blend tree to melt/mix/blend 
+	different animation. For exemple one 
+	animation to rotate the base mixed with
+	one which move the "head".
+
+4. Set up a Voxel matrice/world in Unity.
+
+5. Import and set up the model with the animations in Unity.
+	Play different animation, on button pressed or whatever.
+
+6. A goal list.
