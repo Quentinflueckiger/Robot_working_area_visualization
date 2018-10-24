@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KukaBehaviour : MonoBehaviour {
 
@@ -7,18 +8,19 @@ public class KukaBehaviour : MonoBehaviour {
     public Collider bicepsCollider;
     public Collider forearmCollider;
     public Collider handCollider;
-    public Rigidbody forearmRigidbody;
 
     private Animator _animator;
 
     private int randomIndex;
     private Quaternion baseForearmRotation;
     private bool isInAnimation;
+    private bool isInQueue;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         isInAnimation = false;
+        isInQueue = false;
         _animator = GetComponent<Animator>();
     }
 	
@@ -27,17 +29,21 @@ public class KukaBehaviour : MonoBehaviour {
         
         if (Input.GetKey("space"))
         {
-            if (!isInAnimation)
+
+            if (!isInAnimation && !isInQueue)
                 AnimateRandomly();
         }
         DrawDebuggRay();
+
+      /* else if (isInQueue)
+        {
+            // put the multiple animation here
+        }*/
     }
 
     private void DrawDebuggRay()
     {
-
-        // Have to find a way to add velocity via the animation or so
-        Debug.Log("Velocity " + forearmRigidbody.velocity);
+ 
         /*
         Debug.DrawLine(baseCollider.transform.position + (Vector3.up * 0.1f),
                 baseCollider.transform.position + (Vector3.up * 0.1f) +
@@ -57,6 +63,37 @@ public class KukaBehaviour : MonoBehaviour {
                 (Vector3.down * 1), Color.red);*/
     }
 
+    public void PrepareSequenceOfRandomAnimation(Slider numberOfAnimationSlider)
+    {
+        if (!isInQueue)
+        {
+            isInQueue = true;
+            int numberOfAnimation = (int)numberOfAnimationSlider.value;
+            int[] animationQueue = new int[numberOfAnimation];
+
+            Debug.Log("Input = " + numberOfAnimation);
+            for (int i = 0; i < numberOfAnimation; i++)
+            {
+                animationQueue[i] = UnityEngine.Random.Range(0, 12);
+            }
+
+            MultipleAnimation(animationQueue);
+        }
+        
+    }
+
+    private void MultipleAnimation(int[] animationQueue)
+    {
+        for (int i = 0; i < animationQueue.Length; i++)
+        {
+            isInAnimation = true;
+            Debug.Log("I'm in here !");
+            _animator.SetInteger("AnimParam", animationQueue[i]);
+        }
+       
+        isInQueue = false;
+    }
+
     private void AnimateRandomly()
     {
         isInAnimation = true;
@@ -69,5 +106,10 @@ public class KukaBehaviour : MonoBehaviour {
     {
         _animator.SetInteger("AnimParam", 0);
         isInAnimation = false;
+    }
+
+    public bool getIsInQueue()
+    {
+        return isInQueue;
     }
 }
