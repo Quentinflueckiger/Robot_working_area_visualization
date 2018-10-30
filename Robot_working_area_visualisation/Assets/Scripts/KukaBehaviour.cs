@@ -37,6 +37,7 @@ public class KukaBehaviour : MonoBehaviour {
     private GameObject[] positionHelper;
     private Vector3[] positionHelperOldArray;
     private int numberOfHelper = 7;
+    private int totalNumberOfAnimation = 20;
 
     // Use this for initialization
     void Start () {
@@ -58,7 +59,7 @@ public class KukaBehaviour : MonoBehaviour {
         {
 
             if (!isInAnimation && !isInQueue)
-                Animate(1);
+                Animate();
         }
 
         // If there are something in the stack execute this part
@@ -77,9 +78,9 @@ public class KukaBehaviour : MonoBehaviour {
                     
                 else
                 {
-                    Animate(randomQueue.Pop(), UnityEngine.Random.Range(0.1f, 2.0f)); 
+                    Animate(randomQueue.Pop());
                 }
-                    
+
             }
         }
 
@@ -107,11 +108,11 @@ public class KukaBehaviour : MonoBehaviour {
     {
 
         isInQueue = true;
-        int numberOfAnimation = (int)animateSlider.value;
+        int numberOfAnimationToDo = (int)animateSlider.value;
         
-        for (int i = 0; i < numberOfAnimation; i++)
+        for (int i = 0; i < numberOfAnimationToDo; i++)
         {
-            randomQueue.Push(UnityEngine.Random.Range(0, 12));
+            randomQueue.Push(UnityEngine.Random.Range(0, totalNumberOfAnimation));
         }
         ButtonSliderChangeVisibility();
 
@@ -130,12 +131,10 @@ public class KukaBehaviour : MonoBehaviour {
     /** Set the trigger for the animator based on an input int.
      * 
      * @animationNumber the int used for the trigger
-     * @animatorSpeed the speed at which the animation will be played
     */
-    private void Animate(int animationNumber, float animatorSpeed = 1.0f)
+    private void Animate(int animationNumber)
     {
         isInAnimation = true;
-        _animator.speed = animatorSpeed;
         _animator.SetInteger("AnimParam", animationNumber);
     }
 
