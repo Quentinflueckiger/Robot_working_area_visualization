@@ -18,6 +18,6 @@
 
 6. A goal list.
 
-7. Add something to the Kuka model to use as "collider detector" for the voxel matrice. 
+7. Add something to the Kuka model to use as "collider detector" for the voxel matrice. => using empty game object attached to the parts
 	Maybe something such as boxcollider, or even capsule collider depending
 	on the precision we want.

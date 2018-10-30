@@ -93,7 +93,17 @@ ModelImporter:
     9500000: //RootNode
     13700000: arm_012
     13700002: arm_013
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: disk
+    second: {fileID: 2100000, guid: 539bf28714e424b468d24868d9fd29d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kuka
+    second: {fileID: 2100000, guid: 83fc319d5fce8c24c8938e910a3b93c5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

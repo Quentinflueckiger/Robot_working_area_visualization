@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KukaBehaviour : MonoBehaviour {
+public class KukaBehaviourCorroutine : MonoBehaviour {
 
     public Button animateButton;
     public Slider animateSlider;
@@ -24,7 +24,7 @@ public class KukaBehaviour : MonoBehaviour {
 
     [Space(10)]
     [Header("Parameters")]
-    public int vectorModifier = 10;
+    public int speed = 10;
 
     private Animator _animator;
 
@@ -58,7 +58,7 @@ public class KukaBehaviour : MonoBehaviour {
         {
 
             if (!isInAnimation && !isInQueue)
-                Animate(1);
+                Animate();
         }
 
         // If there are something in the stack execute this part
@@ -77,7 +77,7 @@ public class KukaBehaviour : MonoBehaviour {
                     
                 else
                 {
-                    Animate(randomQueue.Pop(), UnityEngine.Random.Range(0.1f, 2.0f)); 
+                    Animate(randomQueue.Pop()); 
                 }
                     
             }
@@ -130,12 +130,10 @@ public class KukaBehaviour : MonoBehaviour {
     /** Set the trigger for the animator based on an input int.
      * 
      * @animationNumber the int used for the trigger
-     * @animatorSpeed the speed at which the animation will be played
     */
-    private void Animate(int animationNumber, float animatorSpeed = 1.0f)
+    private void Animate(int animationNumber)
     {
         isInAnimation = true;
-        _animator.speed = animatorSpeed;
         _animator.SetInteger("AnimParam", animationNumber);
     }
 
@@ -144,7 +142,6 @@ public class KukaBehaviour : MonoBehaviour {
      */   
     public void AnimationEnded()
     {
-        _animator.speed = 1.0f;
         _animator.SetInteger("AnimParam", 0);
         isInAnimation = false;
         Debug.Log("OUT");
@@ -170,7 +167,7 @@ public class KukaBehaviour : MonoBehaviour {
         {
             Debug.DrawLine(positionHelper[i].transform.position,
                 positionHelper[i].transform.position +
-                (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
+                (positionHelper[i].transform.position - positionHelperOldArray[i]) * speed,
                 Color.red);
         }
 

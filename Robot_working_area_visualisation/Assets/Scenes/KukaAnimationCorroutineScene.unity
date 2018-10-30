@@ -189,7 +189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 595445492}
+      - m_Target: {fileID: 0}
         m_MethodName: PrepareSequenceOfRandomAnimation
         m_Mode: 1
         m_Arguments:
@@ -369,9 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Placeholder Slider Text
-
-'
+  m_Text: Empty
 --- !u!222 &227070771
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -635,7 +633,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 595445491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937ebdf71fe34d846a412a55645b6cf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9489277a1d315dc4596ac2e87d25f8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animateButton: {fileID: 105801455}
@@ -647,7 +645,7 @@ MonoBehaviour:
   foreArmPositionHelperSecond: {fileID: 1246888626}
   foreArmPositionHelperThird: {fileID: 2062132286}
   handPositionHelper: {fileID: 940005117}
-  vectorModifier: 10
+  speed: 10
 --- !u!1 &612454902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: a6fb6bcee43522d46a6b051c80dd9f8f,
