@@ -1,0 +1,102 @@
+\documentclass{scrartcl}
+\usepackage{lipsum}
+%%\usepackage[french]{babel}
+%%\usepackage[ngerman]{babel}
+
+
+%% Choose default font for the document
+%% Warning : only ONE of the following should be enabled
+\usepackage{kpfonts}
+%%\usepackage{libertine}
+
+%% The following chose the default language for the document and
+%% use the default typography rules for the choosen language.
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+%% \setdefaultlanguage{german}
+%%\setdefaultlanguage{french}
+
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{template.bib}
+
+\usepackage{graphicx}
+
+
+\begin{document}
+\title{Visualization of a robotic arms working area}
+\date{\today}   %% or \date{01 november 2018}
+\author{Flückiger Quentin (\texttt{flucq1@bfh.ch}) }
+
+\clearpage
+\maketitle
+\tableofcontents
+\begin{enumerate}
+  \item Introduction
+  \item Project requirements
+  \begin{itemize}
+    \item Vision
+    \item Goals
+    \item System context
+    \item Legend and additional information
+    \item Table
+    \item Description
+    \item Stakeholder descriptions
+  \end{itemize}
+  \item Phase 1
+  \begin{itemize}
+    \item Environment setup / Modeling
+    \item Animating
+  \end{itemize}
+  \item Phase 2
+  \begin{itemize}
+    \item Voxel world
+  \end{itemize}
+  \item Conclusion and future work
+\end{enumerate}
+
+\clearpage
+
+\section{Introduction}
+
+\clearpage
+
+\section{Project requirements}
+\subsection{Vision}
+\subsection{Goals}
+\subsection{System context}
+\subsection{Legend and additional information}
+\subsection{Table}
+\subsection{Description}
+\subsection{Stakeholder descriptions}
+
+\clearpage
+
+\section{Phase 1}
+\subsection{Environment setup / Modeling}
+\begin{itemize}
+  \item Latex, texlive
+  \item Kuka model, blender, unity
+  \item Raycast
+\end{itemize}
+
+\subsection{Animating}
+\begin{itemize}
+  \item blender, unity animation
+  \item script
+\end{itemize}
+
+\clearpage
+
+\section{Phase 2}
+\subsection{Voxel world}
+
+\clearpage
+
+\section{Conclusion and future work}
+To be filled later
+
+
+%% Print the bibibliography and add the section to the table of content
+\printbibliography[heading=bibintoc]
+
+\end{document}
