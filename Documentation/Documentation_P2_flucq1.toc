@@ -24,7 +24,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Environment setup / Modeling}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Animating}{4}
+\contentsline {subsection}{\numberline {3.2}ADD IMAGES HERE !}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Animating}{4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Phase 2}{5}
 \defcounter {refsection}{0}\relax 
