@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,7 +35,7 @@ public class KukaBehaviour : MonoBehaviour {
     private GameObject[] positionHelper;
     private Vector3[] positionHelperOldArray;
     private int numberOfHelper = 7;
-    private int totalNumberOfAnimation = 20;
+    private int totalNumberOfAnimation = 12;
 
     // Use this for initialization
     void Start () {
