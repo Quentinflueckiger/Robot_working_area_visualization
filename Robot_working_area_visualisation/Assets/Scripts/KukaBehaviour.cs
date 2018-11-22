@@ -1,4 +1,12 @@
-﻿using System.Collections.Generic;
+﻿/**
+*   Filename: KukaBehaviour.cs
+*   Author: Flückiger Quentin
+*   
+*   Description:
+*       This script handle the text change of a slider.
+*   
+**/
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +14,7 @@ public class KukaBehaviour : MonoBehaviour {
 
     public Button animateButton;
     public Slider animateSlider;
+    public Material rayCastMaterial;
 
     [Space(10)]
     [Header("Position Helper")]
@@ -82,8 +91,10 @@ public class KukaBehaviour : MonoBehaviour {
             }
         }
 
+
     }
 
+    // LateUpdate is called once per frame, after all Update functions
     private void LateUpdate()
     {
         if (isInAnimation)
@@ -162,13 +173,25 @@ public class KukaBehaviour : MonoBehaviour {
      */
     private void DrawDebuggRay()
     {
-        
+
         for (int i = 0; i < numberOfHelper; i++)
         {
             Debug.DrawLine(positionHelper[i].transform.position,
                 positionHelper[i].transform.position +
                 (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
                 Color.red);
+
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(positionHelper[i].transform.position,
+                                       positionHelper[i].transform.position +
+                                       (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
+                                      100.0f);
+
+            for (int j = 0; j < hits.Length; j++)
+            {
+                if (hits[j].collider.gameObject.CompareTag("Box"))
+                    hits[j].collider.GetComponent<Renderer>().material = rayCastMaterial;
+            }
         }
 
         if (frameCounter % 3 == 0)
@@ -200,3 +223,17 @@ public class KukaBehaviour : MonoBehaviour {
         positionHelper[6] = handPositionHelper;
     }
 }
+
+/*      
+            RaycastHit hit;
+            Ray ray = new Ray(positionHelper[i].transform.position,
+                    positionHelper[i].transform.position +
+                    (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.isTrigger)
+                {
+                    hit.collider.GetComponent<Renderer>().material = rayCastMaterial;
+                }
+            }
+ */

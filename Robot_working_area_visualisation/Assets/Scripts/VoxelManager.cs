@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿/**
+*   Filename: VoxelManager.cs
+*   Author: Flückiger Quentin
+*   
+*   Description:
+*       This script handle the text change of a slider.
+*   
+**/
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VoxelManager : MonoBehaviour {
 
@@ -19,17 +28,7 @@ public class VoxelManager : MonoBehaviour {
 
 	void Awake () {
 
-        SetUpBoxes();
-        InstantiateBoxes(nbrOfBoxesOneSide, boxToInstantiate, position);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.A)) {
-
-            SetUpBoxes();
-            InstantiateBoxes(nbrOfBoxesOneSide, boxToInstantiate, position);
-        }
+        CreateLayout();
     }
 
     private void SetUpBoxes() {
@@ -99,5 +98,17 @@ public class VoxelManager : MonoBehaviour {
             height = 2;
         else
             height = 3;
+    }
+
+    private void CreateLayout() {
+
+        SetUpBoxes();
+        InstantiateBoxes(nbrOfBoxesOneSide, boxToInstantiate, position);
+    }
+    
+    public void ChangeVoxelWorld(Slider nbrOfBoxesSlider) {
+
+        nbrOfBoxesOneSide = (int)nbrOfBoxesSlider.value;
+        CreateLayout();
     }
 }

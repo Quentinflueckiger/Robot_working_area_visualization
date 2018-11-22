@@ -1,5 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/**
+*   Filename: SpeedController.cs
+*   Author: Flückiger Quentin
+*   
+*   Description:
+*       This script handles the speed of animations.
+*   
+**/
 using UnityEngine;
 
 public class SpeedController : MonoBehaviour {

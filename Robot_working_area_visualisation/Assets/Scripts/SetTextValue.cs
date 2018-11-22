@@ -1,14 +1,24 @@
-﻿using UnityEngine.UI;
+﻿/**
+*   Filename: SetTextValue.cs
+*   Author: Flückiger Quentin
+*   
+*   Description:
+*       This script handle the text change of a slider.
+*   
+**/
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SetTextValue : MonoBehaviour {
 
     public Text sliderValue;
     public Slider slider;
+    public string additionalText;
 
+    // Update is called once per frame
     void Update()
     {
-
-        sliderValue.text = slider.value.ToString("0");
+        // Set the text for the slider header
+        sliderValue.text = additionalText + slider.value.ToString("0");
     }
 }
