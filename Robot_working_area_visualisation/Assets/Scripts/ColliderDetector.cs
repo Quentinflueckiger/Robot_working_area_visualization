@@ -2,8 +2,25 @@
 
 public class ColliderDetector : MonoBehaviour {
 
-    void OnCollisionEnter(Collision col)
+    public Material free;
+    public Material occupied;
+
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision with " + col.transform.name);
+        if (other.gameObject.CompareTag("Box"))
+            other.GetComponent<Renderer>().material = occupied;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Box"))
+            other.GetComponent<Renderer>().material = free;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Box"))
+            other.GetComponent<Renderer>().material = occupied;
+    }
+
 }

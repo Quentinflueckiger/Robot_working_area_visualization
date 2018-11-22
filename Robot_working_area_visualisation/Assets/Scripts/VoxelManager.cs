@@ -36,12 +36,7 @@ public class VoxelManager : MonoBehaviour {
         
         sizeOfBox = widthLength / nbrOfBoxesOneSide;
 
-        if (sizeOfBox < 1)
-            height = 4;
-        else if (sizeOfBox > 2)
-            height = 2;
-        else
-            height = 3;
+        CalculateHeight(sizeOfBox);
 
         boxToInstantiate = ScaleBox(sizeOfBox, box);
         CalculateStartPosition();
@@ -89,5 +84,20 @@ public class VoxelManager : MonoBehaviour {
         {
             GameObject.Destroy(child.gameObject);
         }
+    }
+
+    private void CalculateHeight(float size)
+    {
+
+        if (size < 1f && size > 0.6f)
+            height = 4;
+        else if (size <= 0.6f && size > 0.4f)
+            height = 5;
+        else if (size <= 0.4f)
+            height = 6;
+        else if (sizeOfBox > 2f)
+            height = 2;
+        else
+            height = 3;
     }
 }
