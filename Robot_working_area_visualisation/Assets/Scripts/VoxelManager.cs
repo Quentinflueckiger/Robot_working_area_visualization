@@ -22,7 +22,6 @@ public class VoxelManager : MonoBehaviour {
     private float posX;
     private float posY;
     private float posZ;
-    private float offset;
     private Quaternion rotation = new Quaternion();
     private Vector3 position;
 
@@ -71,10 +70,11 @@ public class VoxelManager : MonoBehaviour {
 
     private void CalculateStartPosition() {
 
-        offset = sizeOfBox / 2;
-        posX = -5f + offset;
+        float offset = sizeOfBox / 2;
+        float startPos = -(widthLength / 2);
+        posX = startPos + offset;
         posY = offset;
-        posZ = -5f + offset;
+        posZ = startPos + offset;
     }
 
     private void DestroyPreviousBoxes() {

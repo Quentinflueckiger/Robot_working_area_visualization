@@ -62,10 +62,10 @@ public class KukaBehaviour : MonoBehaviour {
     void Update () {
         
         // Play a random animation on space pressed
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && !isInQueue)
         {
 
-            if (!isInAnimation && !isInQueue)
+            if (!isInAnimation )
                 Animate();
         }
 
@@ -88,7 +88,7 @@ public class KukaBehaviour : MonoBehaviour {
                     Animate(randomQueue.Pop());
                 }
 
-            }
+           }
         }
 
 
@@ -117,9 +117,8 @@ public class KukaBehaviour : MonoBehaviour {
     {
 
         isInQueue = true;
-        int numberOfAnimationToDo = (int)animateSlider.value;
         
-        for (int i = 0; i < numberOfAnimationToDo; i++)
+        for (int i = 0; i < (int)animateSlider.value; i++)
         {
             randomQueue.Push(UnityEngine.Random.Range(0, totalNumberOfAnimation));
         }
@@ -133,7 +132,7 @@ public class KukaBehaviour : MonoBehaviour {
     private void Animate()
     {
         isInAnimation = true;
-        randomIndex = UnityEngine.Random.Range(0, 12);
+        randomIndex = UnityEngine.Random.Range(0, totalNumberOfAnimation);
         _animator.SetInteger("AnimParam", randomIndex);
     }
 
