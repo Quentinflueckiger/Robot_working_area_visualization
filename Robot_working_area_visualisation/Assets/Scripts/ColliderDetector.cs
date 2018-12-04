@@ -13,7 +13,7 @@ public class ColliderDetector : MonoBehaviour {
     public Material free;
     public Material occupied;
 
-   /*
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Box"))
@@ -30,6 +30,6 @@ public class ColliderDetector : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Box"))
             other.GetComponent<Renderer>().material = occupied;
-    }*/
+    }
 
 }

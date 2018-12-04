@@ -18,17 +18,8 @@ public class KukaBehaviour : MonoBehaviour {
 
     [Space(10)]
     [Header("Position Helper")]
-    public GameObject basePositionHelper;
-
-    public GameObject bicepsPositionHelperFirst;
-    public GameObject bicepsPositionHelperSecond;
-
-    public GameObject foreArmPositionHelperFirst;
-    public GameObject foreArmPositionHelperSecond;
-    public GameObject foreArmPositionHelperThird;
-
-    public GameObject handPositionHelper;
-
+    public List<GameObject> listPositionHelper = new List<GameObject>(7);
+    
     [Space(10)]
     [Header("Parameters")]
     public int vectorModifier = 10;
@@ -41,9 +32,8 @@ public class KukaBehaviour : MonoBehaviour {
     private bool isInQueue;
     private static Stack<int> randomQueue = new Stack<int>();
     private int frameCounter = 0;
-    private GameObject[] positionHelper;
     private Vector3[] positionHelperOldArray;
-    private int numberOfHelper = 7;
+    private int numberOfHelper;
     private int totalNumberOfAnimation = 12;
 
     // Use this for initialization
@@ -52,9 +42,8 @@ public class KukaBehaviour : MonoBehaviour {
         isInAnimation = false;
         isInQueue = false;
         _animator = GetComponent<Animator>();
-        positionHelper = new GameObject[numberOfHelper];
+        numberOfHelper = listPositionHelper.Count;
         positionHelperOldArray = new Vector3[numberOfHelper];
-        AssignPositionHelperValue();
         AssignPositionHelperOldValue();
     }
 
@@ -175,15 +164,15 @@ public class KukaBehaviour : MonoBehaviour {
 
         for (int i = 0; i < numberOfHelper; i++)
         {
-            Debug.DrawLine(positionHelper[i].transform.position,
-                positionHelper[i].transform.position +
-                (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
+            Debug.DrawLine(listPositionHelper[i].transform.position,
+                listPositionHelper[i].transform.position +
+                (listPositionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
                 Color.red);
 
             RaycastHit[] hits;
-            hits = Physics.RaycastAll(positionHelper[i].transform.position,
-                                       positionHelper[i].transform.position +
-                                       (positionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
+            hits = Physics.RaycastAll(listPositionHelper[i].transform.position,
+                                       listPositionHelper[i].transform.position +
+                                       (listPositionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
                                       100.0f);
 
             for (int j = 0; j < hits.Length; j++)
@@ -193,8 +182,8 @@ public class KukaBehaviour : MonoBehaviour {
             }
         }
 
-        if (frameCounter % 3 == 0)
-            AssignPositionHelperOldValue();
+        //if (frameCounter % 3 == 0)
+        AssignPositionHelperOldValue();
     }
 
     /**
@@ -204,23 +193,10 @@ public class KukaBehaviour : MonoBehaviour {
     {
         for (int i = 0; i < numberOfHelper; i++)
         {
-            positionHelperOldArray[i] = positionHelper[i].transform.position;
+            positionHelperOldArray[i] = listPositionHelper[i].transform.position;
         }
     }
 
-    /** Initialise an array filled with the amount of game object used to gather information about the position and speed.
-     * 
-     */
-    private void AssignPositionHelperValue()
-    {
-        positionHelper[0] = basePositionHelper;
-        positionHelper[1] = bicepsPositionHelperFirst;
-        positionHelper[2] = bicepsPositionHelperSecond;
-        positionHelper[3] = foreArmPositionHelperFirst;
-        positionHelper[4] = foreArmPositionHelperSecond;
-        positionHelper[5] = foreArmPositionHelperThird;
-        positionHelper[6] = handPositionHelper;
-    }
 }
 
 /*      

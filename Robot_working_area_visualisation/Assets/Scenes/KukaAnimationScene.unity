@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: 282840814}
   - component: {fileID: 282840813}
   - component: {fileID: 282840811}
+  - component: {fileID: 282840812}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -922,6 +923,20 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_Enabled: 1
+--- !u!114 &282840812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9790113fbaf30114fb09022e39467cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1882490615}
+  maxUpCamera: 10
+  maxDownCamera: 0
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -1212,13 +1227,14 @@ MonoBehaviour:
   animateButton: {fileID: 105801455}
   animateSlider: {fileID: 633543164}
   rayCastMaterial: {fileID: 2100000, guid: 8e48bce9abbc056479dfc1d9b9080bb6, type: 2}
-  basePositionHelper: {fileID: 2105255271}
-  bicepsPositionHelperFirst: {fileID: 669410491}
-  bicepsPositionHelperSecond: {fileID: 270133970}
-  foreArmPositionHelperFirst: {fileID: 304867028}
-  foreArmPositionHelperSecond: {fileID: 1246888626}
-  foreArmPositionHelperThird: {fileID: 2062132286}
-  handPositionHelper: {fileID: 940005117}
+  listPositionHelper:
+  - {fileID: 2105255271}
+  - {fileID: 669410491}
+  - {fileID: 270133970}
+  - {fileID: 304867028}
+  - {fileID: 1246888626}
+  - {fileID: 2062132286}
+  - {fileID: 940005117}
   vectorModifier: 10
 --- !u!1 &603512736
 GameObject:
