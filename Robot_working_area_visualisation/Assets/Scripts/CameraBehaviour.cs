@@ -1,19 +1,18 @@
-﻿/**
-*   Filename: CameraBehaviour.cs
-*   Author: Flückiger Quentin
-*   
-*   Description:
-*       This script let an object rotates around a target with the inputs "w,a,s,d".
-*   
-**/
+﻿/// <summary>
+/// Filename: CameraBehaviour.cs
+/// Author: Flückiger Quentin
+/// 
+/// Description:
+///    This script let an object rotates around a target with the inputs "w,a,s,d".
+/// </summary>
 using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour {
 
-    public GameObject target;
+    public GameObject target;       // The target to rotate around
 
-    public float maxUpCamera;
-    public float maxDownCamera;
+    public float maxUpCamera;       // The maximum position y of the camera
+    public float maxDownCamera;     // The minimum position y of the camera
 
 	// Update is called once per frame
 	void Update () {

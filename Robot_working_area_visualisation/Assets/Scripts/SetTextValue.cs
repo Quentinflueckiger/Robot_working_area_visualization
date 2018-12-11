@@ -1,11 +1,11 @@
-﻿/**
-*   Filename: SetTextValue.cs
-*   Author: Flückiger Quentin
-*   
-*   Description:
-*       This script handle the text change of a slider.
-*   
-**/
+﻿/// <summary>
+/// Filename: SetTextValue.cs
+/// Author: Flückiger Quentin
+/// 
+/// Description:
+///     This script handle the text change of a slider.
+/// </summary>
+
 using UnityEngine.UI;
 using UnityEngine;
 
