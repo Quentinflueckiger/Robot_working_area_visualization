@@ -11,7 +11,7 @@ public class ColliderDetector : MonoBehaviour {
 
     public Material freeMaterial;
     public Material occupiedMaterial;
-
+    
    /// <summary>
    /// Change the material of a gameobject if it's tag is "Box" and the robot enter in collision with it.
    /// </summary>
@@ -41,5 +41,5 @@ public class ColliderDetector : MonoBehaviour {
         if (other.gameObject.CompareTag("Box"))
             other.GetComponent<Renderer>().material = occupiedMaterial;
     }
-
+    
 }

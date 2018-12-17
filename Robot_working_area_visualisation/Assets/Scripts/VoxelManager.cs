@@ -71,7 +71,7 @@ public class VoxelManager : MonoBehaviour {
                 // Instantiate one box after the other
                 for (int x = 0; x < nbrOfBoxesOneSide; x++)
                 {
-                
+                    // The last parameter link this object to a parent, which helps tracking them to destroy them
                     boxToInstantiate = Instantiate(box, position, rotation, boxParent.transform);
                     boxToInstantiate.transform.localScale = GetSizeOfBox();
 
@@ -81,7 +81,7 @@ public class VoxelManager : MonoBehaviour {
                 // One row after the other
                 position += new Vector3(-widthLength, 0, sizeOfBox);
             }
-            // One floar after the other
+            // One floor after the other
             position += new Vector3(0, sizeOfBox, -widthLength);
         }   
     }
