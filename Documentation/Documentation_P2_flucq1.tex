@@ -22,6 +22,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./im_ressources/} }
 
+\usepackage{listings}
 
 \begin{document}
 \title{Visualization of a robotic arms working area}
@@ -136,10 +137,12 @@ To make it play different animation (state) we change the value of an integer pa
 which correspond to transition reference to one special animation. When an animation is finished playing it sets the value of the parameter to 0, 
 which is the value of the Idle state, so the animator is ready to play another animation. 
 
+\includegraphics{animator}
+
 To play an animation I decided to add a listener which catch if the space key is pressed and then play a random animation using UnityEngine.Random.
-\begin{center}
-  randomIndex = UnityEngine.Random.Range(0, totalNumberOfAnimation); 
-\end{center}
+\begin{lstlisting}[language={[Sharp]C}]
+  randomIndex = UnityEngine.Random.Range(0, totalNumberOfAnimation);
+\end{lstlisting}
 
 The second option to play an animation is a more visual one, it allows the user to choose the amount of animations he wants to play. 
 It can be chosen with a slider at runtime and then proceeded by clicking a button bellow the slider. 
@@ -147,18 +150,119 @@ This will add random integer, using the same UnityEngine.Random as before, to a 
 However, I encountered a problem in which the AnimParam wasn’t set to 0 after an animation was over. 
 Which leads to not being able to play any other animation or repeating the same one over and over again. 
 So far, the proof led me to think it was a frame problem, so I used a frame counter as a “forced break” after every animation so the AnimParam get properly set to 0. 
-This works, but now sometime the animation queue just stops playing. As a solution I thought about doing this with a coroutine.
+This works, but now sometime the animation queue just stops playing. A solution could be using coroutine instead of the frame counter 
+and have it yield after an animation is done playing so it would not overlap with the starting one.
 
 
 \clearpage
 
 \section{Voxel world}
+
+What is a voxel ? For this we need a bit more background about how to represent graphics on a computer. 
+There is two main ways of doing so, vector and raster. 
+“Vector graphics describe the image with mathematical equations, usually representing things such as lines, curves and shapes. 
+Raster graphics instead describe the image as an array of color values that are positioned one after the other into a grid pattern."
+Pixels are the representation of 2D raster graphics where voxels are the 3D version of it. 
+A voxel is a cube unit that divide a volume in 3D, also called volumetric pixel. It can be imagined or represented as LEGO for more convenience.
+
+The idea was to create a voxel world where boxes susceptible to be occupied by the robot in a close future would change to show this possibility.
+
 \subsection{Set up}
+
+The first step was to create our own voxel world. It is based on a plane used as ground, as the plane is square its x and z values are the same. 
+The height is calculated every time a call to create the layout is made, it depends on the size of the boxes used as voxel unit. 
+The bigger the boxes are, the less floor the world will have and conversely. The size of the boxes is calculated whenever we want to change the layout, 
+either at the start or when we change the slider and press the button. It simply divides the width with the number of box we want on one side. 
+The position of the first box is calculated as follow.
+
+\begin{lstlisting}[language={[Sharp]C}]
+  private void CalculateStartPosition() {
+        float offset = sizeOfBox / 2;
+        float startPos = -(widthLength / 2);
+        posX = startPos + offset;
+        posY = offset;
+        posZ = startPos + offset;
+    }
+
+\end{lstlisting}
+
+This gives us the position on the edge at -x, -z on the “first floor”. To get the next position we just add the size of the box to the position vector at the x component. 
+We control that the position is still on our ground and accordingly start reset the right component and increment the next one. Here is the algorithm which fill the world.
+
+\begin{lstlisting}[language={[Sharp]C}]
+private void InstantiateBoxes(int nbrOfBoxesOneSide, 
+                              GameObject boxToInstatiate, 
+                              Vector3 position) {
+      DestroyPreviousBoxes();
+
+      // Instantiate the boxes with a triple for, one for each dimension.
+      for (int y = 0; y < height; y++)
+      {
+          for (int z = 0; z < nbrOfBoxesOneSide; z++)
+          {
+              // Instantiate one box after the other
+              for (int x = 0; x < nbrOfBoxesOneSide; x++)
+              {
+                  // The last parameter link this object to a parent, 
+                  // which helps tracking them to destroy them
+                  boxToInstantiate = Instantiate(box, position, 
+                                     rotation, boxParent.transform);
+                  boxToInstantiate.transform.localScale = GetSizeOfBox();
+
+                  // The next position to instantiate a box
+                  position += new Vector3(sizeOfBox, 0, 0);
+              }
+              // One row after the other
+              position += new Vector3(-widthLength, 0, sizeOfBox);
+          }
+          // One floor after the other
+          position += new Vector3(0, sizeOfBox, -widthLength);
+      }   
+  }
+
+\end{lstlisting}
+
+Here are 3 screenshots of the world with respectively 3, 10 and 30 boxes per sides.
+
+\begin{center}
+  \begin{tabular}{c}
+    3 \\
+    \includegraphics{voxel_world_3}  \\
+    10 \\
+    \includegraphics{voxel_world_10} \\
+    30 \\
+    \includegraphics{voxel_world_30}
+  \end{tabular}
+\end{center}
+
 \subsection{Collision}
+
+As the world was created and could change its density at runtime the next step was to find a way to get the boxes were the robot is. 
+To do so with Unity is quite simple, we needed to add two components to each main part of the robot (here we have 4 main parts). 
+A Rigidbody and a Box Collider. Those two components had to be added as well to the box prefab which is the gameobject instantiated as the voxel unit. 
+This will let us use the already build-in collision system from Unity. We then use this system with a script called Collider Detector, 
+which is added as a component to the four main parts as well. It will listen to triggers emitted by the box collider and called method based on this trigger. 
+There are three methods used: OnTriggerEnter, OnTriggerExit and OnTriggerStay. There behaviour is very similar, just the material used is different.
+
+\begin{lstlisting}[language={[Sharp]C}]
+  private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Box"))
+            other.GetComponent<Renderer>().material = occupiedMaterial;
+    }
+
+\end{lstlisting}
+
+The tag is used to make sure not to interact with anything other than what we want, in this case the box. 
+Now the boxes change material accordingly to represent their actual state (Occupied, free).
+
+\includegraphics{collision}
+
 \subsection{Prediction}
 \subsection{Cleaning}
 \subsection{Optimization}
-
+\begin{lstlisting}[language={[Sharp]C}]
+\end{lstlisting}
 
 \clearpage
 
@@ -167,6 +271,6 @@ To be filled later
 
 
 %% Print the bibibliography and add the section to the table of content
-\printbibliography[heading=bibintoc]
+%%\printbibliography[heading=bibintoc]
 
 \end{document}
