@@ -1245,7 +1245,7 @@ MonoBehaviour:
   - {fileID: 1246888626}
   - {fileID: 2062132286}
   - {fileID: 940005117}
-  vectorModifier: 10
+  vectorModifier: 30
   predictionDuration: 100
   rayCastMaterial: {fileID: 2100000, guid: 8e48bce9abbc056479dfc1d9b9080bb6, type: 2}
   baseMaterial: {fileID: 2100000, guid: fa31f4dc2d3013348bbaeb2d919a8608, type: 2}

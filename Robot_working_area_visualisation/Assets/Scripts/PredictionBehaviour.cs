@@ -16,8 +16,9 @@ public class PredictionBehaviour : MonoBehaviour {
 
     [Space(10)]
     [Header("Parameters")]
-    public int vectorModifier = 10;
+    public int vectorModifier = 30;
     public int predictionDuration = 100;
+    public float maxRaycastDistance = 100.0f;
     public Material rayCastMaterial;
     public Material baseMaterial;
 
@@ -57,22 +58,27 @@ public class PredictionBehaviour : MonoBehaviour {
         }
     }
 
+    // Draw debug line and prediction ray cast
     public void DrawDebugRay()
     {
 
         for (int i = 0; i < numberOfHelper; i++)
         {
+            // Draw lines, only in the inspector, to visualize the prediction vector
             Debug.DrawLine(listPositionHelper[i].transform.position,
                 listPositionHelper[i].transform.position +
                 (listPositionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
                 Color.red);
 
+            // Cast a ray and stores what has been hit
             RaycastHit[] hits;
             hits = Physics.RaycastAll(listPositionHelper[i].transform.position,
                                        listPositionHelper[i].transform.position +
                                        (listPositionHelper[i].transform.position - positionHelperOldArray[i]) * vectorModifier,
-                                      100.0f);
+                                      maxRaycastDistance);
 
+            // Go through the object hits by the ray,
+            // if they have the "Box" tag changes the material and add them to the hitList
             for (int j = 0; j < hits.Length; j++)
             {
                 if (hits[j].collider.gameObject.CompareTag("Box"))
@@ -84,7 +90,6 @@ public class PredictionBehaviour : MonoBehaviour {
             }
         }
 
-        //if (frameCounter % 3 == 0)
         AssignPositionHelperOldValue();
     }
     

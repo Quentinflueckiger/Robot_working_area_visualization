@@ -3,7 +3,7 @@
 /// Author: Flückiger Quentin
 /// 
 /// Description:
-///     This script handles the speed of animations.
+///     This script handles the animation of the robot and listen to keyboard input.
 /// </summary>
 using System.Collections.Generic;
 using UnityEngine;
