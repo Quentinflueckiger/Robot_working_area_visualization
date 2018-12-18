@@ -1,23 +1,56 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.2)  17 DEC 2018 18:30
-entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**d:/Quentin/Documents/Project2/Project2_flucq1/Documentation/Documentation_P2_flucq1.tex
-(d:/Quentin/Documents/Project2/Project2_flucq1/Documentation/Documentation_P2_flucq1.tex
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  18 DEC 2018 20:25
+ restricted system commands enabled.
+**Documentation_P2_flucq1.tex
+(./Documentation_P2_flucq1.tex
 LaTeX2e <2018-04-01> patch level 5
-(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Lua module: luaotfload-main 2018/09/24 2.90001 OpenType layout system.
+Lua module: lualibs 2018-09-21 2.6 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2018-09-21 2.6 ConTeXt Lua libraries -- extended co
+llection.
+luaotfload | conf : Root cache directory is D:/Programmes/texlive/2018/texmf-var
+/luatex-cache/generic/names.
+luaotfload | init : Loading fontloader “fontloader-2018-09-24.lua” from kpse
+-resolved path “d:/Programmes/texlive/2018/texmf-dist/tex/luatex/luaotfload/fo
+ntloader-2018-09-24.lua”.
+Lua-only attribute luaotfload@state = 1
+Lua-only attribute luaotfload@noligature = 2
+Lua-only attribute luaotfload@syllabe = 3
+luaotfload | init : Context OpenType loader version “3.104”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 4
+luaotfload | conf : Root cache directory is D:/Programmes/texlive/2018/texmf-var
+/luatex-cache/generic/names.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
+.
+luaotfload | main : initialization completed in 0.260 seconds (d:/Programmes/te
+xlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent ba
+sics and keyval usage)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent b
+asics and keyval usage)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
-))) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
+)))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
@@ -26,10 +59,15 @@ Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 134.
 Class scrartcl Info: File `scrsize11pt.clo' used instead of
-(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 2114.
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 2114
+.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
 File: scrsize11pt.clo 2018/03/30 v3.25 KOMA-Script font size class option (11pt)
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
+
+luaotfload | db : Font names database loaded from D:/Programmes/texlive/2018/tex
+mf-var/luatex-cache/generic/names/luaotfload-names.luc)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2018/03/30 v3.25 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count80
@@ -45,44 +83,6 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              DIV departure   = -6%
 (typearea)              \evensidemargin = 17.3562pt
 (typearea)              \oddsidemargin  = 17.3562pt
-(typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 595.80026pt
-(typearea)              \topmargin      = -25.16531pt
-(typearea)              \headheight     = 17.0pt
-(typearea)              \headsep        = 20.40001pt
-(typearea)              \topskip        = 11.0pt
-(typearea)              \footskip       = 47.6pt
-(typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1706.
-)
-\c@part=\count81
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@subparagraph=\count86
-\scr@dte@part@maxnumwidth=\skip47
-\scr@dte@section@maxnumwidth=\skip48
-\scr@dte@subsection@maxnumwidth=\skip49
-\scr@dte@subsubsection@maxnumwidth=\skip50
-\scr@dte@paragraph@maxnumwidth=\skip51
-\scr@dte@subparagraph@maxnumwidth=\skip52
-\abovecaptionskip=\skip53
-\belowcaptionskip=\skip54
-\c@pti@nb@sid@b@x=\box27
-\scr@dte@figure@maxnumwidth=\skip55
-Package tocbasic Info: omitting babel extension for `lof'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 5439.
-\c@figure=\count87
-\scr@dte@table@maxnumwidth=\skip56
-Package tocbasic Info: omitting babel extension for `lot'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 5451.
-\c@table=\count88
-Class scrartcl Info: Redefining `\numberline' on input line 5615.
-\bibindent=\dimen102
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/lip= 17.3562pt
 (typearea)             \paperheight     = 845.04694pt
 (typearea)              \textheight     = 595.80026pt
 (typearea)              \topmargin      = -25.16531pt
@@ -1526,21 +1526,70 @@ Package luatex.def Info: ./im_ressources/voxel_world_30.png  used on input line
 (luatex.def)             Requested size: 205.5173pt x 112.16878pt.
 [7] [8<./im_ressources/voxel_world_3.PNG><./im_ressources/voxel_world_10.PNG><./
 im_ressources/voxel_world_30.PNG>]
-Overfull \hbox (48.21822pt too wide) in paragraph at lines 251--252
+Overfull \hbox (48.21822pt too wide) in paragraph at lines 252--253
 [][][][][][][][][][][][][][][] 
  []
 
 <./im_ressources/collision.png, id=45, 472.01344pt x 255.20343pt>
 File: ./im_ressources/collision.png Graphic file (type png)
 <use ./im_ressources/collision.png>
-Package luatex.def Info: ./im_ressources/collision.png  used on input line 259.
+Package luatex.def Info: ./im_ressources/collision.png  used on input line 260.
 (luatex.def)             Requested size: 472.01228pt x 255.2028pt.
 
-Overfull \hbox (64.70673pt too wide) in paragraph at lines 259--260
+Overfull \hbox (64.70673pt too wide) in paragraph at lines 260--261
 [][] 
  []
 
-[9<./im_ressources/collision.PNG>] [10
+<./im_ressources/position_wo_helper.png, id=46, 138.5175pt x 198.7425pt>
+File: ./im_ressources/position_wo_helper.png Graphic file (type png)
+<use ./im_ressources/position_wo_helper.png>
+Package luatex.def Info: ./im_ressources/position_wo_helper.png  used on input l
+ine 270.
+(luatex.def)             Requested size: 138.51715pt x 198.742pt.
+<./im_ressources/position.png, id=47, 176.15813pt x 175.40532pt>
+File: ./im_ressources/position.png Graphic file (type png)
+<use ./im_ressources/position.png>
+Package luatex.def Info: ./im_ressources/position.png  used on input line 270.
+(luatex.def)             Requested size: 176.15768pt x 175.40488pt.
+[9<./im_ressources/collision.PNG>]
+<./im_ressources/vector_vitesse.png, id=52, 344.78813pt x 211.54031pt>
+File: ./im_ressources/vector_vitesse.png Graphic file (type png)
+<use ./im_ressources/vector_vitesse.png>
+Package luatex.def Info: ./im_ressources/vector_vitesse.png  used on input line 
+277.
+(luatex.def)             Requested size: 344.78728pt x 211.53978pt.
+ [10<./im_ressources/position_wo_helper.png><./im_ressources/position.png><./im_
+ressources/Vector_vitesse.png>]
+Overfull \hbox (15.36795pt too wide) in paragraph at lines 295--296
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (67.92838pt too wide) in paragraph at lines 297--298
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (54.78827pt too wide) in paragraph at lines 299--300
+[][][][][][][][][][][][][] 
+ []
+
+<./im_ressources/uncleaned.png, id=59, 376.40625pt x 205.5178pt>
+File: ./im_ressources/uncleaned.png Graphic file (type png)
+<use ./im_ressources/uncleaned.png>
+Package luatex.def Info: ./im_ressources/uncleaned.png  used on input line 311.
+(luatex.def)             Requested size: 376.40532pt x 205.5173pt.
+[11<./im_ressources/uncleaned.PNG>]
+Overfull \hbox (74.49843pt too wide) in paragraph at lines 323--324
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.22784pt too wide) in paragraph at lines 326--327
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[12] [13
 
 ] (./Documentation_P2_flucq1.aux)
 
@@ -1557,13 +1606,13 @@ Package logreq Info: Writing requests to 'Documentation_P2_flucq1.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 25678 strings out of 494407
+ 25771 strings out of 494407
  100000,1373583 words of node,token memory allocated
  546 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 64 glue_spec,
  7 attribute_list, 1 write nodes
-   avail lists: 1:4,2:1062,3:83,4:46,5:334,6:25,7:3935,8:117,9:722,10:25,11:229
- 29084 multiletter control sequences out of 65536+600000
+   avail lists: 1:4,2:1062,3:83,4:46,5:377,6:25,7:3935,8:117,9:722,10:25,11:229
+ 29125 multiletter control sequences out of 65536+600000
  100 fonts using 8986247 bytes
  62i,10n,83p,9120b,793s stack positions out of 5000i,500n,10000p,200000b,100000s
 <d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmroman10-italic
@@ -1574,10 +1623,10 @@ c/lm/lmmono12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/
 public/lm/lmroman12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/ope
 ntype/public/lm/lmsans10-bold.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/t
 ype1/public/kpfonts/jkpsy.pfb>
-Output written on Documentation_P2_flucq1.pdf (10 pages, 504996 bytes).
+Output written on Documentation_P2_flucq1.pdf (13 pages, 690940 bytes).
 
-PDF statistics: 94 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+PDF statistics: 113 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

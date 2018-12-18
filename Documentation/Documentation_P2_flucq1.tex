@@ -239,10 +239,11 @@ Here are 3 screenshots of the world with respectively 3, 10 and 30 boxes per sid
 
 As the world was created and could change its density at runtime the next step was to find a way to get the boxes were the robot is. 
 To do so with Unity is quite simple, we needed to add two components to each main part of the robot (here we have 4 main parts). 
-A Rigidbody and a Box Collider. Those two components had to be added as well to the box prefab which is the gameobject instantiated as the voxel unit. 
+A Rigidbody and a Collider. Those two components had to be added as well to the box prefab which is the gameobject instantiated as the voxel unit. 
 This will let us use the already build-in collision system from Unity. We then use this system with a script called Collider Detector, 
-which is added as a component to the four main parts as well. It will listen to triggers emitted by the box collider and called method based on this trigger. 
-There are three methods used: OnTriggerEnter, OnTriggerExit and OnTriggerStay. There behaviour is very similar, just the material used is different.
+which is added as a component to the four main parts as well. It will listen to triggers emitted by the collider and called method based on this trigger. 
+There are are three methods used with very similar behaviour, which is changing the material of the collided game object if it has the tag “Box”, 
+the three methods are respectively called: OnTriggerEnter, OnTriggerExit and OnTriggerStay. 
 
 \begin{lstlisting}[language={[Sharp]C}]
   private void OnTriggerEnter(Collider other)
@@ -259,7 +260,84 @@ Now the boxes change material accordingly to represent their actual state (Occup
 \includegraphics{collision}
 
 \subsection{Prediction}
+
+To predict the position of the robot we are using vector addition, but to do so and have decent result we first had to change again our model. 
+Because having only four places where we would calculate the position isn’t accurate. We added empty game object to the four main parts and placed them at different places. 
+Here is an example of the forearm to understand the problematic.
+
+\begin{center}
+  \begin{tabular}{c c}
+    \includegraphics{position_wo_helper} & \includegraphics{position}
+  \end{tabular}
+\end{center}
+
+One can see that having only one position would lead to very imprecise results whereas it already is more precise with just three helpers. 
+We could then start to calculate with the position helpers, we used vector addition to find the “b” of next figure.
+
+\includegraphics{vector_vitesse}
+
+We draw a ray cast from the current position to which we add the vector “b” multiplied with a modifier to give more amplitude to it. 
+Every game object hit by this ray cast will be stored into an array and later checked if they are tagged with the “Box” tag. 
+If it’s the case their material will change to show the robot is awaited to occupy this voxel.
+
+\begin{lstlisting}[language={[Sharp]C}]
+  RaycastHit[] hits;
+            hits = Physics.RaycastAll(
+              listPositionHelper[i].transform.position,
+              listPositionHelper[i].transform.position +
+                (listPositionHelper[i].transform.position - 
+                  positionHelperOldArray[i]) 
+                * vectorModifier,
+              maxRaycastDistance);
+
+            for (int j = 0; j < hits.Length; j++)
+            {
+                if (hits[j].collider.gameObject.CompareTag("Box"))
+                {
+                    hitList.Add(new RaycastHitBox(hits[j], frameCounter));
+                    hits[j].collider.
+                    GetComponent<Renderer>().material = rayCastMaterial;
+                }
+                   
+            }
+
+\end{lstlisting}
+
 \subsection{Cleaning}
+
+Being able to predict where could be the robot is a nice feature but useless if we don’t have a way to notify the voxels that the robot is no longer awaited at their position. 
+Otherwise after a few movements the whole world is filled with possible position of the robot, when he is just waiting for the next input to start another animation.
+
+\includegraphics{uncleaned}
+
+To keep track of the boxes visited we added them in a list with a timestamp (the frame at which they were hit by the prediction ray cast) just before changing their material.
+
+\begin{lstlisting}[language={[Sharp]C}]
+  hitList.Add(new RaycastHitBox(hits[j], frameCounter));
+\end{lstlisting}
+
+Every frame we then loop through the list and compare the current frame counter with theirs, 
+and if it exceeds a given prediction duration we change its material back to the base one and remove it from the list.
+
+\begin{lstlisting}[language={[Sharp]C}]
+  // Clear boxes which are not expected to be visited anymore by the robot.
+  private void CleanUnusedBoxes()
+  {
+      // Loop through a list where all collided game objects are
+      foreach(RaycastHitBox item in hitList.ToArray())
+      {
+          // Based on a duration check
+          if (item.frame < (frameCounter - predictionDuration))
+          {
+              item.hit.collider.
+              GetComponent<Renderer>().material = baseMaterial;
+              hitList.Remove(item);
+          }
+      }
+  }
+\end{lstlisting}
+
+
 \subsection{Optimization}
 \begin{lstlisting}[language={[Sharp]C}]
 \end{lstlisting}
