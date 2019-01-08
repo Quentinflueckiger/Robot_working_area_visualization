@@ -24,6 +24,7 @@ public class KukaBehaviour : MonoBehaviour {
     private int frameCounter = 0;
     private int totalNumberOfAnimation = 12;
     private PredictionBehaviour predictionBehaviour;
+    private bool predict = true;
 
     // Use this for initialization
     void Start () {
@@ -78,7 +79,7 @@ public class KukaBehaviour : MonoBehaviour {
     private void LateUpdate()
     {
         // Checks if the robot is in animation and calls the debug ray accordingly.
-        if (isInAnimation)
+        if (isInAnimation && predict)
         {
             predictionBehaviour.DrawDebugRay();
         }
@@ -140,5 +141,11 @@ public class KukaBehaviour : MonoBehaviour {
         animateButton.gameObject.SetActive(status);
         animateSlider.gameObject.SetActive(status);
         status = !status ;
+    }
+
+    // Switch boolean predict, which is used to notify if one need to predict the movements.
+    public void SwitchPredict()
+    {
+        predict = !predict;
     }
 }
