@@ -8,8 +8,7 @@ You can clone this project with GitHubDesktop or with the following command in c
 ```sh
 git clone https://github.com/Quentinflueckiger/Project2_flucq1.git
 ```
-
-Then you should be able to open the project directly in Unity3D.
+To open the project in Unity3D select the Robot_working_area_visualization folder when choosing a project to open.
 
 ### How to run the build version
 
