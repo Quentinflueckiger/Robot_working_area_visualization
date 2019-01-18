@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  18 DEC 2018 20:25
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  18 JAN 2019 14:47
  restricted system commands enabled.
 **Documentation_P2_flucq1.tex
 (./Documentation_P2_flucq1.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.260 seconds (d:/Programmes/te
+luaotfload | main : initialization completed in 0.277 seconds (d:/Programmes/te
 xlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -1417,44 +1417,54 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 34.
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 34.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 35.
 
-No file Documentation_P2_flucq1.toc.
+(./Documentation_P2_flucq1.toc)
 \tf@toc=\write5
 
 \openout5 = Documentation_P2_flucq1.toc
-[1
+ [1
 
 
 
-{d:/Programmes/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2
+{d:/Programmes/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 87.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 63.
+<./im_ressources/Goals.png, id=13, 313.17pt x 79.79813pt>
+File: ./im_ressources/Goals.png Graphic file (type png)
+<use ./im_ressources/Goals.png>
+Package luatex.def Info: ./im_ressources/Goals.png  used on input line 70.
+(luatex.def)             Requested size: 313.16922pt x 79.79791pt.
+<./im_ressources/SystemContext.png, id=14, 339.51843pt x 264.23718pt>
+File: ./im_ressources/SystemContext.png Graphic file (type png)
+<use ./im_ressources/SystemContext.png>
+Package luatex.def Info: ./im_ressources/SystemContext.png  used on input line 7
+4.
+(luatex.def)             Requested size: 339.5176pt x 264.23653pt.
  [3
 
-]
-<./im_ressources/industrial_robotic_arm.jpg, id=16, 150.5625pt x 150.5625pt>
+<./im_ressources/Goals.png><./im_ressources/SystemContext.png>]
+<./im_ressources/industrial_robotic_arm.jpg, id=20, 150.5625pt x 150.5625pt>
 File: ./im_ressources/industrial_robotic_arm.jpg Graphic file (type jpg)
 <use ./im_ressources/industrial_robotic_arm.jpg>
 Package luatex.def Info: ./im_ressources/industrial_robotic_arm.jpg  used on inp
-ut line 118.
+ut line 99.
 (luatex.def)             Requested size: 150.56212pt x 150.56212pt.
-<./im_ressources/kuka.jpg, id=17, 150.5625pt x 150.5625pt>
+<./im_ressources/kuka.jpg, id=21, 150.5625pt x 150.5625pt>
 File: ./im_ressources/kuka.jpg Graphic file (type jpg)
 <use ./im_ressources/kuka.jpg>
-Package luatex.def Info: ./im_ressources/kuka.jpg  used on input line 118.
+Package luatex.def Info: ./im_ressources/kuka.jpg  used on input line 99.
 (luatex.def)             Requested size: 150.56212pt x 150.56212pt.
-<./im_ressources/robotarm_cylinder.jpg, id=18, 150.5625pt x 150.5625pt>
+<./im_ressources/robotarm_cylinder.jpg, id=22, 150.5625pt x 150.5625pt>
 File: ./im_ressources/robotarm_cylinder.jpg Graphic file (type jpg)
 <use ./im_ressources/robotarm_cylinder.jpg>
 Package luatex.def Info: ./im_ressources/robotarm_cylinder.jpg  used on input li
-ne 118.
+ne 99.
 (luatex.def)             Requested size: 150.56212pt x 150.56212pt.
 
-Overfull \hbox (69.4308pt too wide) in paragraph at lines 116--120
+Overfull \hbox (69.4308pt too wide) in paragraph at lines 97--101
  [] 
  []
 
@@ -1462,157 +1472,154 @@ Overfull \hbox (69.4308pt too wide) in paragraph at lines 116--120
 
 <./im_ressources/industrial_robotic_arm.jpg><./im_ressources/kuka.jpg><./im_ress
 ources/robotarm_cylinder.jpg>]
-<./im_ressources/animator.png, id=22, 457.71pt x 149.8097pt>
+<./im_ressources/animator.png, id=26, 457.71pt x 149.8097pt>
 File: ./im_ressources/animator.png Graphic file (type png)
 <use ./im_ressources/animator.png>
-Package luatex.def Info: ./im_ressources/animator.png  used on input line 140.
+Package luatex.def Info: ./im_ressources/animator.png  used on input line 121.
 (luatex.def)             Requested size: 457.7089pt x 149.80931pt.
 
-Overfull \hbox (50.40334pt too wide) in paragraph at lines 140--141
+Overfull \hbox (50.40334pt too wide) in paragraph at lines 121--122
 [][] 
  []
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
-Overfull \hbox (28.50806pt too wide) in paragraph at lines 144--145
+Overfull \hbox (28.50806pt too wide) in paragraph at lines 125--126
 [][][][][][][][][][][][][][][][] 
  []
 
 [5<./im_ressources/animator.PNG>]
-Overfull \hbox (61.35832pt too wide) in paragraph at lines 198--199
+Overfull \hbox (61.35832pt too wide) in paragraph at lines 179--180
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [6
 
 ]
-Overfull \hbox (35.07811pt too wide) in paragraph at lines 206--207
+Overfull \hbox (35.07811pt too wide) in paragraph at lines 187--188
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (28.50806pt too wide) in paragraph at lines 209--210
+Overfull \hbox (28.50806pt too wide) in paragraph at lines 190--191
 [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (61.35832pt too wide) in paragraph at lines 210--212
+Overfull \hbox (61.35832pt too wide) in paragraph at lines 191--193
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.36795pt too wide) in paragraph at lines 216--217
+Overfull \hbox (15.36795pt too wide) in paragraph at lines 197--198
 [][][][][][][][][][][][][][][][][][] 
  []
 
-<./im_ressources/voxel_world_3.png, id=33, 205.5178pt x 109.91063pt>
+<./im_ressources/voxel_world_3.png, id=37, 205.5178pt x 109.91063pt>
 File: ./im_ressources/voxel_world_3.png Graphic file (type png)
 <use ./im_ressources/voxel_world_3.png>
 Package luatex.def Info: ./im_ressources/voxel_world_3.png  used on input line 2
-30.
+11.
 (luatex.def)             Requested size: 205.5173pt x 109.91034pt.
-<./im_ressources/voxel_world_10.png, id=34, 206.27063pt x 112.16907pt>
+<./im_ressources/voxel_world_10.png, id=38, 206.27063pt x 112.16907pt>
 File: ./im_ressources/voxel_world_10.png Graphic file (type png)
 <use ./im_ressources/voxel_world_10.png>
 Package luatex.def Info: ./im_ressources/voxel_world_10.png  used on input line 
-232.
+213.
 (luatex.def)             Requested size: 206.27011pt x 112.16878pt.
-<./im_ressources/voxel_world_30.png, id=35, 205.5178pt x 112.16907pt>
+<./im_ressources/voxel_world_30.png, id=39, 205.5178pt x 112.16907pt>
 File: ./im_ressources/voxel_world_30.png Graphic file (type png)
 <use ./im_ressources/voxel_world_30.png>
 Package luatex.def Info: ./im_ressources/voxel_world_30.png  used on input line 
-234.
+215.
 (luatex.def)             Requested size: 205.5173pt x 112.16878pt.
 [7] [8<./im_ressources/voxel_world_3.PNG><./im_ressources/voxel_world_10.PNG><./
 im_ressources/voxel_world_30.PNG>]
-Overfull \hbox (48.21822pt too wide) in paragraph at lines 252--253
+Overfull \hbox (48.21822pt too wide) in paragraph at lines 233--234
 [][][][][][][][][][][][][][][] 
  []
 
-<./im_ressources/collision.png, id=45, 472.01344pt x 255.20343pt>
+<./im_ressources/collision.png, id=49, 472.01344pt x 255.20343pt>
 File: ./im_ressources/collision.png Graphic file (type png)
 <use ./im_ressources/collision.png>
-Package luatex.def Info: ./im_ressources/collision.png  used on input line 260.
+Package luatex.def Info: ./im_ressources/collision.png  used on input line 241.
 (luatex.def)             Requested size: 472.01228pt x 255.2028pt.
 
-Overfull \hbox (64.70673pt too wide) in paragraph at lines 260--261
+Overfull \hbox (64.70673pt too wide) in paragraph at lines 241--242
 [][] 
  []
 
-<./im_ressources/position_wo_helper.png, id=46, 138.5175pt x 198.7425pt>
+<./im_ressources/position_wo_helper.png, id=50, 138.5175pt x 198.7425pt>
 File: ./im_ressources/position_wo_helper.png Graphic file (type png)
 <use ./im_ressources/position_wo_helper.png>
 Package luatex.def Info: ./im_ressources/position_wo_helper.png  used on input l
-ine 270.
+ine 251.
 (luatex.def)             Requested size: 138.51715pt x 198.742pt.
-<./im_ressources/position.png, id=47, 176.15813pt x 175.40532pt>
+<./im_ressources/position.png, id=51, 176.15813pt x 175.40532pt>
 File: ./im_ressources/position.png Graphic file (type png)
 <use ./im_ressources/position.png>
-Package luatex.def Info: ./im_ressources/position.png  used on input line 270.
+Package luatex.def Info: ./im_ressources/position.png  used on input line 251.
 (luatex.def)             Requested size: 176.15768pt x 175.40488pt.
 [9<./im_ressources/collision.PNG>]
-<./im_ressources/vector_vitesse.png, id=52, 344.78813pt x 211.54031pt>
+<./im_ressources/vector_vitesse.png, id=56, 344.78813pt x 211.54031pt>
 File: ./im_ressources/vector_vitesse.png Graphic file (type png)
 <use ./im_ressources/vector_vitesse.png>
 Package luatex.def Info: ./im_ressources/vector_vitesse.png  used on input line 
-277.
+258.
 (luatex.def)             Requested size: 344.78728pt x 211.53978pt.
  [10<./im_ressources/position_wo_helper.png><./im_ressources/position.png><./im_
 ressources/Vector_vitesse.png>]
-Overfull \hbox (15.36795pt too wide) in paragraph at lines 295--296
+Overfull \hbox (15.36795pt too wide) in paragraph at lines 276--277
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (67.92838pt too wide) in paragraph at lines 297--298
+Overfull \hbox (67.92838pt too wide) in paragraph at lines 278--279
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (54.78827pt too wide) in paragraph at lines 299--300
+Overfull \hbox (54.78827pt too wide) in paragraph at lines 280--281
 [][][][][][][][][][][][][] 
  []
 
-<./im_ressources/uncleaned.png, id=59, 376.40625pt x 205.5178pt>
+<./im_ressources/uncleaned.png, id=63, 376.40625pt x 205.5178pt>
 File: ./im_ressources/uncleaned.png Graphic file (type png)
 <use ./im_ressources/uncleaned.png>
-Package luatex.def Info: ./im_ressources/uncleaned.png  used on input line 311.
+Package luatex.def Info: ./im_ressources/uncleaned.png  used on input line 292.
 (luatex.def)             Requested size: 376.40532pt x 205.5173pt.
 [11<./im_ressources/uncleaned.PNG>]
-Overfull \hbox (74.49843pt too wide) in paragraph at lines 323--324
+Overfull \hbox (74.49843pt too wide) in paragraph at lines 304--305
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.22784pt too wide) in paragraph at lines 326--327
+Overfull \hbox (2.22784pt too wide) in paragraph at lines 307--308
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[12] [13
+[12]
+
+LaTeX Warning: Empty bibliography on input line 355.
+
+[13
 
 ] (./Documentation_P2_flucq1.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Documentation_P2_flucq1
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'Documentation_P2_flucq1.run.xml'.
 
 \openout1 = Documentation_P2_flucq1.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 25771 strings out of 494407
+ 25818 strings out of 494407
  100000,1373583 words of node,token memory allocated
- 546 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 64 glue_spec,
- 7 attribute_list, 1 write nodes
-   avail lists: 1:4,2:1062,3:83,4:46,5:377,6:25,7:3935,8:117,9:722,10:25,11:229
- 29125 multiletter control sequences out of 65536+600000
+ 565 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 67 glue_spec,
+ 8 attribute_list, 1 write nodes
+   avail lists: 1:4,2:1062,3:102,4:46,5:377,6:25,7:3935,8:117,9:722,10:25,11:233
+
+ 29137 multiletter control sequences out of 65536+600000
  100 fonts using 8986247 bytes
  62i,10n,83p,9120b,793s stack positions out of 5000i,500n,10000p,200000b,100000s
 <d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmroman10-italic
@@ -1623,9 +1630,9 @@ c/lm/lmmono12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/
 public/lm/lmroman12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/ope
 ntype/public/lm/lmsans10-bold.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/t
 ype1/public/kpfonts/jkpsy.pfb>
-Output written on Documentation_P2_flucq1.pdf (13 pages, 690940 bytes).
+Output written on Documentation_P2_flucq1.pdf (13 pages, 721167 bytes).
 
-PDF statistics: 113 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 117 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)

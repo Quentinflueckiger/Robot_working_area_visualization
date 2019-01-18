@@ -3,7 +3,7 @@ INPUT d:/Programmes/texlive/2018/texmf.cnf
 INPUT d:/Programmes/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT d:/Programmes/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT d:/Quentin/Documents/Project2/Project2_flucq1/Documentation/Documentation_P2_flucq1.tex
-OUTPUT Documentation_P2_flucq1.log
+OUTPUT .//Documentation_P2_flucq1.log
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -72,7 +72,7 @@ INPUT d:/Programmes/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT d:/Programmes/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
-INPUT nul
-INPUT nul
+INPUT .//nul:
+INPUT .//nul:.tex
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 INPUT d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def

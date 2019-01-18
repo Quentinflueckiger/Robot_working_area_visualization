@@ -12,14 +12,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}System context}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Legend and additional information}{3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Table}{3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6}Description}{3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7}Stakeholder descriptions}{3}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Phase 1}{4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Environment setup / Modelling}{4}
@@ -35,7 +27,5 @@
 \contentsline {subsection}{\numberline {4.3}Prediction}{9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4}Cleaning}{11}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Optimization}{12}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Conclusion and future work}{13}

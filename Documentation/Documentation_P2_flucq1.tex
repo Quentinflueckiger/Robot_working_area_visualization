@@ -26,39 +26,14 @@
 
 \begin{document}
 \title{Visualization of a robotic arms working area}
-\date{\today}   %% or \date{01 november 2018}
+\date{\today}   
 \author{Flückiger Quentin (\texttt{flucq1@bfh.ch}) }
 
 \clearpage
 \maketitle
+
 \tableofcontents
-\begin{enumerate}
-  \item Introduction
-  \item Project requirements
-  \begin{itemize}
-    \item Vision
-    \item Goals
-    \item System context
-    \item Legend and additional information
-    \item Table
-    \item Description
-    \item Stakeholder descriptions
-  \end{itemize}
-  \item Phase 1
-  \begin{itemize}
-    \item Environment setup / Modeling
-    \item Animating
-  \end{itemize}
-  \item Voxel world
-  \begin{itemize}
-    \item Set up
-    \item Collision
-    \item Prediction
-    \item Cleaning
-    \item Optimization
-  \end{itemize}
-  \item Conclusion and future work
-\end{enumerate}
+
 
 \clearpage
 
@@ -84,13 +59,19 @@ Well this project will cover the topics movements visualization of a robotic arm
 \clearpage
 
 \section{Project requirements}
+
 \subsection{Vision}
+
+The project Visualization of a robotic arm’s working area is aimed to create a software which will simulate the movements of a Kuka robot. 
+It will then represent the robots’ current displacement and its future possible location. 
+
 \subsection{Goals}
+
+\includegraphics{Goals}
+
 \subsection{System context}
-\subsection{Legend and additional information}
-\subsection{Table}
-\subsection{Description}
-\subsection{Stakeholder descriptions}
+
+\includegraphics{SystemContext}
 
 \clearpage
 
@@ -338,17 +319,39 @@ and if it exceeds a given prediction duration we change its material back to the
 \end{lstlisting}
 
 
-\subsection{Optimization}
 \begin{lstlisting}[language={[Sharp]C}]
 \end{lstlisting}
 
 \clearpage
 
 \section{Conclusion and future work}
-To be filled later
+
+The visualization of a Kuka robot’s working space is a rather bride topic in which I contributed to the first step, where only simulated elements are taking care of. 
+
+The stated goals have been reached. The animation of a Kuka robot was achieved with the built-in animation system from Unity3D. 
+It was interesting to reproduce the movement a real Kuka robot would have but the speed of animations is too high to easily see the prediction. 
+Even with the possibility to change the speed of the animation at runtime it is not optimal. Because of the way the prediction is calculated, 
+based on the frame per second, and how the change in speed is changing the rate at which the time in the application goes by, it makes the prediction inaccurate. 
+Predicting the movement of the Kuka robot has been done by calculating a 3-dimensional vector which represent the difference in position between two frames 
+for a given “position helper” and repeating the operation for each “position helper”. 
+This 3-dimensional vector is then added to its corresponding “position helper” to represent the position of this part of the Kuka robot 
+in the next frame if its displacement were constants, linear motion. Having the robot being able to only move its arm without himself moving, 
+the base stays at the same position, an improvement in the accuracy of the prediction would be using circular motion 
+and the angular velocity to not calculate a straight line from the “position helper” but an arc. As for now the cleaning of used boxes is arbitrary, a
+fter a given time the boxes turn back to being “free”. And this is done without testing if the robot is still awaited there, it can lead to some gruesome errors. 
+The software is non-suggestible, for human, as its purpose is to predict the position of a Kuka robot and not use a predefined set of case. 
+The environment of the robot can be altered at runtime. The user can create a sequence of animation to be played, enable the prediction or not, 
+change the speed at which the animation is played and rebuild the voxel world with a different number of boxes to gain precision. 
+Having a greater number of boxes slows down the application as each box must control if there is a collision with anything, 
+to gain performance the collision detection should not be done on the boxes but on the robot. 
+Changing the number of boxes populating the world takes some time the software is destroying every boxes object and then creating new ones, 
+if we want forty boxes on one side we have 40*40*6 = 9’600 (width*length*height) boxes in total which leads to a high calculation time. 
+A solution to reduce the calculation time when rebuilding the voxel world would be to create an object pool at the start of the application and store the maximum number of boxes needed in this pool.
+
+The next steps in this project would be improving the current software with said solutions. Using a real Kuka robot instead of a 3D model, capturing its motion with sensors attached to it or with video recognition in real time. And expanding it with Augmented Reality to be able to see with glasses, or another haptic device, in real time the motions of a Kuka robot.
 
 
 %% Print the bibibliography and add the section to the table of content
-%%\printbibliography[heading=bibintoc]
+\printbibliography[heading=bibintoc]
 
 \end{document}
